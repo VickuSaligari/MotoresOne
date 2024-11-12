@@ -33,9 +33,12 @@ public class Movement : MonoBehaviour
     Vector3 moveDirection;
 
     Rigidbody rb;
+    
+    [SerializeField] Renderer playerRenderer;
 
     private void Start()
     {
+        playerRenderer.enabled = false;
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
 

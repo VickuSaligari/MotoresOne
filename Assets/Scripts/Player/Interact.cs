@@ -6,16 +6,20 @@ public class Interact : MonoBehaviour
 {
     public GameObject melee;  
     public GameObject gun; 
+    public GameObject bug; 
+    public GameObject bomboclat; 
     public float pickupRange = 2.0f;      
     public LayerMask pickupLayer;    
 
-    private bool pickedUp = false;
+    
     
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.E)) 
         {
             CheckForItemPickup();
+            
+            Debug.Log("pressed E");
         }
     }
 
@@ -38,23 +42,18 @@ public class Interact : MonoBehaviour
     {
         switch (item.itemType)
         {
-            case Item.ItemType.Stick:
+            case ItemType.Stick:
                 melee.SetActive(true);
+                Destroy(item); 
                 Debug.Log("stick.");
                 break;
-            case Item.ItemType.Gun:
+            case ItemType.Gun:
                 gun.SetActive(true);
+                Destroy(item); 
                 Debug.Log("gun.");
                 break;
         }
         Destroy(item.gameObject); 
-    }
-    
-
-    private void PickupItem(GameObject item)
-    {
-        Debug.Log("Picked up Hat");
-        Destroy(item); 
     }
     
     private void OnDrawGizmosSelected()

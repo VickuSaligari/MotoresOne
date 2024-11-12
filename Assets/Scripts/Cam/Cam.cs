@@ -16,7 +16,7 @@ public class Cam : MonoBehaviour
     Cursor.visible = false;
     
     xRotation = 0f; 
-    yRotation = 90f;
+    yRotation = 0f;
   }
 
   private void Update()

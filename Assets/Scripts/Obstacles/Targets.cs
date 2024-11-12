@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Targets : MonoBehaviour
 {
@@ -16,6 +18,49 @@ public class Targets : MonoBehaviour
 
     chance 1:40 -> golden: +60 pts
 
-    when time´s up: =>200 pts -> door opens / <200 points: try again
+    when timeï¿½s up: =>200 pts -> door opens / <200 points: try again
     */
+    
+   
+    private Renderer objRenderer;
+    public Color pressMe;
+    public Color doNotPressMe;
+    public Color goldenn;
+    public float changeDuration = 2.0f;
+
+    private bool _isActive;
+    public bool isActive{get{return _isActive;}set{_isActive = value;}}
+
+    void Start()
+    {
+        objRenderer = GetComponent<Renderer>();
+
+       // StartCoroutine(ChangeColor());
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+            StartCoroutine(ChangeColor());
+    }
+    
+   public IEnumerator ChangeColor()
+    {
+        isActive = true;
+        Color originalColor = objRenderer.material.color;
+        float elapsedTime = 0f;
+
+        while (elapsedTime < changeDuration)
+        {
+            objRenderer.material.color = Color.Lerp(originalColor, pressMe, elapsedTime / changeDuration);
+            elapsedTime += Time.deltaTime;
+
+            yield return null; 
+        }
+
+        objRenderer.material.color = pressMe;
+
+        yield return new WaitForSeconds(1f);
+        isActive = false;
+        objRenderer.material.color = originalColor;
+    }
 }
