@@ -15,8 +15,12 @@ public class Inputs : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             interact.CheckForItemPickup();
-
-            Debug.Log("pressed E");
+        }
+        
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            interact.CheckReff();
+            
         }
 
         movement.MyInput();
