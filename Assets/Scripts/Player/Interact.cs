@@ -10,20 +10,10 @@ public class Interact : MonoBehaviour
     public GameObject bomboclat; 
     public float pickupRange = 2.0f;      
     public LayerMask pickupLayer;    
-
     
-    
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.E)) 
-        {
-            CheckForItemPickup();
-            
-            Debug.Log("pressed E");
-        }
-    }
+    [SerializeField] Inputs inputs;
 
-    private void CheckForItemPickup()
+    public void CheckForItemPickup()
     {
         Collider[] itemsInRange = Physics.OverlapSphere(transform.position, pickupRange, pickupLayer);
 
@@ -44,11 +34,13 @@ public class Interact : MonoBehaviour
         {
             case ItemType.Stick:
                 melee.SetActive(true);
+                inputs.firstWeapon = melee.GetComponent<Weapons>();
                 Destroy(item); 
                 Debug.Log("stick.");
                 break;
             case ItemType.Gun:
                 gun.SetActive(true);
+                inputs.secondWeapon = gun.GetComponent<Weapons>();
                 Destroy(item); 
                 Debug.Log("gun.");
                 break;

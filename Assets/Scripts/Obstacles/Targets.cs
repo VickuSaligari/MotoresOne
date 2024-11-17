@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,7 +5,7 @@ using UnityEngine.Serialization;
 
 public class Targets : MonoBehaviour
 {
-    /*() time limit -> 200 or more pts to win 
+    /*() time limit -> 200 or more pts to win
      * buttons starts timer
 
     flash 6 secs pts < 120 / 4 secs pts > 120 - cyan up / magenta down
@@ -20,8 +19,8 @@ public class Targets : MonoBehaviour
 
     when time�s up: =>200 pts -> door opens / <200 points: try again
     */
-    
-   
+
+
     private Renderer objRenderer;
     public Color pressMe;
     public Color doNotPressMe;
@@ -29,38 +28,85 @@ public class Targets : MonoBehaviour
     public float changeDuration = 2.0f;
 
     private bool _isActive;
-    public bool isActive{get{return _isActive;}set{_isActive = value;}}
+
+    public bool isActive
+    {
+        get { return _isActive; }
+        set { _isActive = value; }
+    }
+
+    public Mode currentMode = Mode.Normal;
 
     void Start()
     {
         objRenderer = GetComponent<Renderer>();
 
-       // StartCoroutine(ChangeColor());
+        // StartCoroutine(ChangeColor());
     }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-            StartCoroutine(ChangeColor());
-    }
-    
-   public IEnumerator ChangeColor()
+    public IEnumerator ChangeColor()
     {
         isActive = true;
-        Color originalColor = objRenderer.material.color;
-        float elapsedTime = 0f;
+        int random = Random.Range(0, 3);
+        currentMode = (Mode)random;
 
-        while (elapsedTime < changeDuration)
+        switch (currentMode)
         {
-            objRenderer.material.color = Color.Lerp(originalColor, pressMe, elapsedTime / changeDuration);
-            elapsedTime += Time.deltaTime;
-
-            yield return null; 
+            case Mode.Normal: 
+                objRenderer.material.color = pressMe;
+                break;
+            
+            case Mode.Black: 
+                objRenderer.material.color = doNotPressMe;
+                break;
+            
+            case Mode.Goldenn: 
+                objRenderer.material.color = goldenn;
+                break;
+            
         }
 
-        objRenderer.material.color = pressMe;
-
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(3f);
         isActive = false;
-        objRenderer.material.color = originalColor;
+        objRenderer.material.color = Color.white;
     }
+
+    public void Hit(int pointsToAdd)
+    {
+        if (!isActive)
+        {
+            return;
+        }
+        
+        switch (currentMode)
+        {
+            case Mode.Normal:
+                PointsManager.Instance.Points += pointsToAdd;
+                break;
+            
+            case Mode.Black:
+                PointsManager.Instance.Points -= pointsToAdd;
+                break;
+            
+            case Mode.Goldenn:
+                PointsManager.Instance.Points += 2 * pointsToAdd;
+                break;
+        }
+
+        isActive = false;
+        objRenderer.material.color = Color.white;
+    }
+    
+    public void StopGame()
+    {
+        isActive = false;
+        
+        objRenderer.material.color = Color.white;
+    }
+}
+
+public enum Mode
+{
+    Black,
+    Goldenn,
+    Normal
 }

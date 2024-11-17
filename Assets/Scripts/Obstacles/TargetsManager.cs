@@ -11,7 +11,6 @@ public class TargetsManager : MonoBehaviour
     private bool _canActivateTargets;
     [SerializeField] float _timeTillChange;
 
-    //public bool canActivateTarget{get{return _canActivateTargets;}set{_canActivateTargets=true;}}
     public float TimeTillChange
     {
         get { return _timeTillChange; }
@@ -52,5 +51,16 @@ public class TargetsManager : MonoBehaviour
         }
         yield return new WaitForSeconds(TimeTillChange);
         _canActivateTargets = true;
+    }
+
+    public void StopGame()
+    {
+        StopAllCoroutines();
+        _canActivateTargets = false;
+        
+        foreach (var target in targets)
+        {
+            target.StopGame();
+        }  
     }
 }
