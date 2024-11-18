@@ -9,6 +9,7 @@ public class CajaManager : MonoBehaviour
    
    [SerializeField] private PickUpBox[] _boxes;
    private bool _completed;
+   public Canvas canvas;
 
    private void Awake()
    {
@@ -33,6 +34,7 @@ public class CajaManager : MonoBehaviour
 
    void WinWin()
    {
+      canvas.gameObject.SetActive(true);
       Debug.Log("Win");
    }
 }
