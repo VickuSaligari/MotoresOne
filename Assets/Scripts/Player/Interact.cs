@@ -9,6 +9,12 @@ public class Interact : MonoBehaviour
     public GameObject player;
     public Transform  rayPos;
     public float rayLength;
+    
+    [Header("Weapons")]
+    public GameObject melee;
+    public GameObject gun;
+    public GameObject bug;
+    public GameObject bomboclat;
 
     [Header("Interactions")]
     public float pickupRange = 1f;

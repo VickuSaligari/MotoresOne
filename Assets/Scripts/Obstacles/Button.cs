@@ -1,3 +1,6 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Button : MonoBehaviour, IInteractuable
@@ -8,12 +11,12 @@ public class Button : MonoBehaviour, IInteractuable
     {
         if (other.gameObject.TryGetComponent(out Movement player) && PointsManager.Instance.Points <= 200)
         {
-            Interact(true);
+            manager.StartGame();
         }
     }
 
     public void Interact(bool interacting)
     {
-        manager.StartGame();
+        throw new NotImplementedException();
     }
 }

@@ -5,5 +5,5 @@ using UnityEngine;
 
 public interface IInteractuable 
 {
-    void Interact(bool canInteract);
+    void Interact(bool aa);
 }
