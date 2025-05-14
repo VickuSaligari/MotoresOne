@@ -7,7 +7,6 @@ using UnityEngine.Serialization;
 public class Inputs : MonoBehaviour
 {
     [SerializeField] Interact interact;
-    [SerializeField] Movement movement;
     public Weapons firstWeapon, secondWeapon;
 
     private void Update()
@@ -22,9 +21,7 @@ public class Inputs : MonoBehaviour
             interact.CheckReff();
             
         }
-
-        movement.MyInput();
-
+        
         if (Input.GetKeyDown(KeyCode.Mouse0) && firstWeapon != null)
         {
             firstWeapon.Attack();

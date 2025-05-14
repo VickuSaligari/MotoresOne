@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: f88fef45b0d6f6c46b932cccde7809fc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.56
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f88fef45b0d6f6c46b932cccde7809fc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.008
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f88fef45b0d6f6c46b932cccde7809fc, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.48
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f88fef45b0d6f6c46b932cccde7809fc, type: 3}
       propertyPath: m_LocalRotation.w
@@ -54,7 +54,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: db06e8f081c0a484c9a1820f3255b882, type: 2}
     - target: {fileID: 919132149155446097, guid: f88fef45b0d6f6c46b932cccde7809fc, type: 3}
       propertyPath: m_Name
-      value: greenOne Variant
+      value: greenOne
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f88fef45b0d6f6c46b932cccde7809fc, type: 3}
       propertyPath: m_Layer
@@ -110,3 +110,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemType: 2
+  correctBoxPos: {fileID: 0}
+  Parent: {fileID: 0}
+  placed: 0

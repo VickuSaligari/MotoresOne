@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Melee : Weapons
+public class Melee : Weapons, IAddPoints
 {
     Animator animator;
     [SerializeField] private string attackTrigger;
@@ -15,7 +15,7 @@ public class Melee : Weapons
         animator = GetComponent<Animator>();
     }
 
-    private void OnTriggerEnter(Collider other)
+     public void OnTriggerEnter(Collider other)
     {
         if (other.TryGetComponent(out Targets target))
         {
@@ -35,7 +35,6 @@ public class Melee : Weapons
             }
         }
     }
-
     public void ToggleCollider(int value)
     {
         if (value >= 1) _collider.enabled = true;

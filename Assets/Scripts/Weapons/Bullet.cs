@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
-public class Bullet : MonoBehaviour
+public class Bullet : MonoBehaviour, IAddPoints
 {
    private Rigidbody _rigidbody;
    [SerializeField] private int _normal = 10, _black = 20, _goldenn = 20;
@@ -18,7 +18,7 @@ public class Bullet : MonoBehaviour
       Destroy(gameObject, 6);
    }
 
-   private void OnTriggerEnter(Collider other)
+   public void OnTriggerEnter(Collider other)
    {
       if (other.TryGetComponent(out Targets target))
       {

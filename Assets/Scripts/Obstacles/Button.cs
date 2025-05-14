@@ -9,7 +9,7 @@ public class Button : MonoBehaviour, IInteractuable
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.TryGetComponent(out Movement player) && PointsManager.Instance.Points <= 200)
+        if (PointsManager.Instance.Points <= 200)
         {
             Interact(true);
         }

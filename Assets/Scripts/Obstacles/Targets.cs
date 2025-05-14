@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public class Targets : MonoBehaviour
+public class Targets : MonoBehaviour //IInteractuable
 {
     private Renderer objRenderer;
     public Color pressMe;
