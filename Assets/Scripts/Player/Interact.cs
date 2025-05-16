@@ -69,10 +69,16 @@ public class Interact : MonoBehaviour
 
             case ItemType.Box:
                 if (_currentBox != null) return;
+
+                PickUpBox pickUp = item.GetComponent<PickUpBox>();
+
+                if (pickUp.IsCorrectlyPlaced()) return;
+
                 item.transform.position = _boxPosition.position;
                 item.transform.parent = _boxPosition;
                 item.transform.rotation = Quaternion.Euler(Vector3.zero);
-                _currentBox = item.GetComponent<PickUpBox>();
+                _currentBox = pickUp;
+
                 Physics.IgnoreCollision(_currentBox.GetComponent<Collider>(), player.GetComponent<Collider>(), true);
                 break;
         }
@@ -92,13 +98,10 @@ public class Interact : MonoBehaviour
         _currentBox.transform.position = _currentBox.correctBoxPos.transform.position;
         _currentBox.transform.rotation = _currentBox.correctBoxPos.transform.rotation;
         _currentBox.gameObject.layer = 7;
-        
+
         Physics.IgnoreCollision(_currentBox.GetComponent<Collider>(), player.GetComponent<Collider>(), false);
-        
-        _currentBox.placed = true;
-        CajaManager.instance.CheckIfPlaced();
-        
         _currentBox.transform.parent = _currentBox.Parent;
+
         _currentBox = null;
     }
 
