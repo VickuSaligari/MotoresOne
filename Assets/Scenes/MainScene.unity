@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3275,37 +3275,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4352888243202192950, guid: 7f047032bf74f1e46aa421bdbaff918c, type: 3}
   m_PrefabInstance: {fileID: 1261413740}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1035642736
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1035642737}
-  m_Layer: 6
-  m_Name: FirePoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1035642737
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1035642736}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.8333064, z: -0, w: 0.5528115}
-  m_LocalPosition: {x: -0.567, y: 0.16000009, z: 0.09}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2009353177}
-  m_LocalEulerAnglesHint: {x: 0, y: -112.88, z: 0}
 --- !u!1001 &1043136270
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3494,6 +3463,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 2068588389}
   m_SourcePrefab: {fileID: 100100000, guid: 1bbc19c65c73055409fc7cc93154722a, type: 3}
+--- !u!114 &1091386854 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2730375051297855336, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+  m_PrefabInstance: {fileID: 1283382123}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dba7142556cc9ab41913862bd813b186, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1120587629 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 8151deee993055444836a9692cafd871, type: 3}
@@ -4562,6 +4542,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 1857039661893540145, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      propertyPath: bulletPool
+      value: 
+      objectReference: {fileID: 1091386854}
+    - target: {fileID: 2730375051297855336, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 1515050160}
     - target: {fileID: 4459864850019384738, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -4572,7 +4560,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4459864850019384738, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 13.59
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4459864850019384738, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4664,10 +4652,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 4459864850019384738, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1035642737}
+    m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4459864850019384750, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       insertIndex: -1
@@ -4986,26 +4971,13 @@ GameObject:
   - component: {fileID: 1347198814}
   - component: {fileID: 1347198813}
   - component: {fileID: 1347198812}
-  - component: {fileID: 1347198811}
   m_Layer: 0
   m_Name: BulletGO
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1347198811
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1347198810}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5207c5f992d21a8438808a7540d76a30, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_IsActive: 0
 --- !u!135 &1347198812
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5063,7 +5035,7 @@ Transform:
   m_GameObject: {fileID: 1347198810}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.0183434, y: 1.1286459, z: 1.2283459}
+  m_LocalPosition: {x: -2.0183434, y: 2.496, z: 1.2283459}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5203,7 +5175,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 8151deee993055444836a9692cafd871, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: db06e8f081c0a484c9a1820f3255b882, type: 2}
+      objectReference: {fileID: 2100000, guid: 7b13eb25fbb53c440a8d75b320a9df3b, type: 2}
     - target: {fileID: -5754084199372789682, guid: 8151deee993055444836a9692cafd871, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -5321,7 +5293,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 8151deee993055444836a9692cafd871, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: db06e8f081c0a484c9a1820f3255b882, type: 2}
+      objectReference: {fileID: 2100000, guid: 7b13eb25fbb53c440a8d75b320a9df3b, type: 2}
     - target: {fileID: -5754084199372789682, guid: 8151deee993055444836a9692cafd871, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -5455,6 +5427,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5207c5f992d21a8438808a7540d76a30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 20
 --- !u!1 &1552368482 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4459864850019384750, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
@@ -5617,7 +5590,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 8151deee993055444836a9692cafd871, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: db06e8f081c0a484c9a1820f3255b882, type: 2}
+      objectReference: {fileID: 2100000, guid: 7b13eb25fbb53c440a8d75b320a9df3b, type: 2}
     - target: {fileID: -5754084199372789682, guid: 8151deee993055444836a9692cafd871, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -6797,11 +6770,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 219eb47ad5bd9a64e8159bf50ecf9c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &2009353177 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4459864850019384738, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
-  m_PrefabInstance: {fileID: 1283382123}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2009353178
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6809,12 +6777,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1552368482}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2c1a410184c8dff49a2648253e2d2d32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firePoint: {fileID: 1035642737}
+  firePoint: {fileID: 0}
   bulletPool: {fileID: 1248403033}
 --- !u!1001 &2033583798
 PrefabInstance:
@@ -7241,7 +7209,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 8151deee993055444836a9692cafd871, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: db06e8f081c0a484c9a1820f3255b882, type: 2}
+      objectReference: {fileID: 2100000, guid: 7b13eb25fbb53c440a8d75b320a9df3b, type: 2}
     - target: {fileID: -5754084199372789682, guid: 8151deee993055444836a9692cafd871, type: 3}
       propertyPath: m_Mesh
       value: 

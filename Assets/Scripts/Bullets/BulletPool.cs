@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class BulletPool : MonoBehaviour, IBulletPool
 {
-    [SerializeField] private Bullets bulletPrefab;
+    [SerializeField] private Bullet bulletPrefab;
     [SerializeField] private int poolSize = 10;
 
     private Queue<IBullet> bullets;
@@ -15,7 +15,7 @@ public class BulletPool : MonoBehaviour, IBulletPool
         bullets = new Queue<IBullet>();
         for (int i = 0; i < poolSize; i++)
         {
-            Bullets newBullet = Instantiate(bulletPrefab, transform);
+            Bullet newBullet = Instantiate(bulletPrefab, transform);
             newBullet.Initialize(this);
             newBullet.gameObject.SetActive(false);
             bullets.Enqueue(newBullet);
@@ -29,7 +29,7 @@ public class BulletPool : MonoBehaviour, IBulletPool
             return bullets.Dequeue();
         }
 
-        Bullets extraBullet = Instantiate(bulletPrefab, transform);
+        Bullet extraBullet = Instantiate(bulletPrefab, transform);
         extraBullet.Initialize(this);
         extraBullet.gameObject.SetActive(false);
         return extraBullet;

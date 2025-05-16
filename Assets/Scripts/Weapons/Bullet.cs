@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
-public class Bullet : MonoBehaviour, IAddPoints
+public class Bullet : MonoBehaviour, IAddPoints, IBullet
 {
    private Rigidbody _rigidbody;
-   [SerializeField] private int _normal = 10, _black = 20, _goldenn = 20;
+    private IBulletPool pool;
+    [SerializeField] private int _normal = 10, _black = 20, _goldenn = 20;
    [SerializeField] private float _force = 100f;
 
    private void Start()
@@ -18,7 +19,18 @@ public class Bullet : MonoBehaviour, IAddPoints
       Destroy(gameObject, 6);
    }
 
-   public void OnTriggerEnter(Collider other)
+    public void Initialize(IBulletPool bulletPool)
+    {
+        pool = bulletPool;
+    }
+
+    public void Shoot(Vector3 direction)
+    {
+        gameObject.SetActive(true);
+        GetComponent<Rigidbody>().velocity = direction * _force;
+    }
+
+    public void OnTriggerEnter(Collider other)
    {
       if (other.TryGetComponent(out Targets target))
       {
@@ -39,4 +51,16 @@ public class Bullet : MonoBehaviour, IAddPoints
       }
       Destroy(gameObject);
    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        ReturnToPool();
+    }
+
+    public void ReturnToPool()
+    {
+        GetComponent<Rigidbody>().velocity = Vector3.zero;
+        gameObject.SetActive(false);
+        pool.ReturnBullet(this);
+    }
 }

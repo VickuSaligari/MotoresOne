@@ -6,10 +6,19 @@ public class Gun : Weapons
 {
     [SerializeField] GameObject bullet;
     [SerializeField] Transform bulletSpawn;
+    [SerializeField] private BulletPool bulletPool;
 
     public override void Attack()
     {
-        Instantiate(bullet, bulletSpawn.position, bulletSpawn.rotation);
+        Debug.Log($"el metodo attack si empezo");
+        IBullet bullet = bulletPool.GetBullet();
+
+        if (bullet is MonoBehaviour monoBullet)
+        {
+            monoBullet.transform.position = bulletSpawn.position;
+        }
+
+        bullet.Shoot(bulletSpawn.forward);
     }
     
     

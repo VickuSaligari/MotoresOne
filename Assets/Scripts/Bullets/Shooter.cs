@@ -19,7 +19,7 @@ public class Shooter : MonoBehaviour
                 monoBullet.transform.position = firePoint.position;
             }
 
-            bullet.Shoot(firePoint.forward);
+            //bullet.Shoot(firePoint.forward);
         }
     }
 }
