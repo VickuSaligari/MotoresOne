@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Button : MonoBehaviour, IInteractuable
 {
-    [SerializeField] TargetsManager manager;
+    [SerializeField] private TargetsManager manager;
 
     private void OnTriggerEnter(Collider other)
     {

@@ -1163,7 +1163,6 @@ MonoBehaviour:
   itemType: 2
   correctBoxPos: {fileID: 2056198054}
   Parent: {fileID: 1883553506}
-  placed: 0
 --- !u!1001 &418072284
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2391,6 +2390,7 @@ GameObject:
   m_Component:
   - component: {fileID: 698990821}
   - component: {fileID: 698990822}
+  - component: {fileID: 698990823}
   m_Layer: 0
   m_Name: PointsManager
   m_TagString: Untagged
@@ -2426,7 +2426,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _points: 0
-  pointsText: {fileID: 1816547698}
+--- !u!114 &698990823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 698990820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbf5fe3643958b040810bea346922be2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   _puertitas:
   - {fileID: 2068588385}
   - {fileID: 1325729052}
@@ -3143,7 +3154,6 @@ MonoBehaviour:
   itemType: 2
   correctBoxPos: {fileID: 400182356}
   Parent: {fileID: 1454622889}
-  placed: 0
 --- !u!114 &1030153786 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 257401052294437620, guid: 7f047032bf74f1e46aa421bdbaff918c, type: 3}
@@ -3466,7 +3476,6 @@ MonoBehaviour:
   itemType: 2
   correctBoxPos: {fileID: 1637268023}
   Parent: {fileID: 1498084999}
-  placed: 0
 --- !u!1001 &1159227964
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4055,6 +4064,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ae31d58a4c1df5043a6719bdbd716413, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1609788005}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ae31d58a4c1df5043a6719bdbd716413, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1609788011}
   m_SourcePrefab: {fileID: 100100000, guid: ae31d58a4c1df5043a6719bdbd716413, type: 3}
 --- !u!1 &1256837651
 GameObject:
@@ -4113,7 +4125,7 @@ MonoBehaviour:
   - {fileID: 867027329}
   - {fileID: 1030153786}
   - {fileID: 702254024}
-  _timeTillChange: 0.6
+  _timeTillChange: 1
 --- !u!1001 &1261413740
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4318,7 +4330,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4459864850019384738, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 13.59
       objectReference: {fileID: 0}
     - target: {fileID: 4459864850019384738, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4387,6 +4399,18 @@ PrefabInstance:
     - target: {fileID: 5322420732009851644, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: layerMask.m_Bits
       value: 2048
+      objectReference: {fileID: 0}
+    - target: {fileID: 5732576564205290250, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 5732576564205290250, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.773
+      objectReference: {fileID: 0}
+    - target: {fileID: 5732576564205290250, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.033
       objectReference: {fileID: 0}
     - target: {fileID: 8167347190729880290, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: m_Layer
@@ -5118,6 +5142,19 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ae31d58a4c1df5043a6719bdbd716413, type: 3}
   m_PrefabInstance: {fileID: 1250412539}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1609788011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1609788004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 967368416bdbfa842a1e133b49d6dbbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointsText: {fileID: 1816547698}
 --- !u!1 &1637268023 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 8151deee993055444836a9692cafd871, type: 3}
@@ -5390,7 +5427,6 @@ MonoBehaviour:
   itemType: 2
   correctBoxPos: {fileID: 943339518}
   Parent: {fileID: 1454622889}
-  placed: 0
 --- !u!1 &1713059311
 GameObject:
   m_ObjectHideFlags: 0
@@ -5570,7 +5606,6 @@ MonoBehaviour:
   itemType: 2
   correctBoxPos: {fileID: 1120587629}
   Parent: {fileID: 1454622889}
-  placed: 0
 --- !u!1 &1804966949
 GameObject:
   m_ObjectHideFlags: 0
@@ -6268,7 +6303,6 @@ MonoBehaviour:
   itemType: 2
   correctBoxPos: {fileID: 181947672}
   Parent: {fileID: 1883553506}
-  placed: 0
 --- !u!1 &1960852477 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 422d8cbec09d66c4eb7756f9df800f7c, type: 3}
@@ -6341,7 +6375,6 @@ MonoBehaviour:
   itemType: 2
   correctBoxPos: {fileID: 611054269}
   Parent: {fileID: 1498084999}
-  placed: 0
 --- !u!1 &1974706763 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 8151deee993055444836a9692cafd871, type: 3}
@@ -6388,7 +6421,6 @@ MonoBehaviour:
   itemType: 2
   correctBoxPos: {fileID: 1300734985}
   Parent: {fileID: 1498084999}
-  placed: 0
 --- !u!114 &2009353170 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2975474844909374271, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
@@ -6645,7 +6677,6 @@ MonoBehaviour:
   itemType: 2
   correctBoxPos: {fileID: 1910351748}
   Parent: {fileID: 1883553506}
-  placed: 0
 --- !u!114 &2091255873 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4405336837443874603, guid: a6c0cd87c742af94c82bf6494ecd856e, type: 3}
@@ -6846,6 +6877,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8151deee993055444836a9692cafd871, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2128296406}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8151deee993055444836a9692cafd871, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2128296409}
   m_SourcePrefab: {fileID: 100100000, guid: 8151deee993055444836a9692cafd871, type: 3}
 --- !u!4 &2128296403 stripped
 Transform:
@@ -6873,6 +6907,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.0381835, y: 2.8018777, z: 0.5512357}
   m_Center: {x: -0.0011107922, y: 1.4009389, z: 0}
+--- !u!114 &2128296409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1974706763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48f890be196871840938a8e3f38e0483, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requiredColor: {r: 0.7176471, g: 0.84883296, b: 1, a: 1}
+  requiredSize: 3
+  isOccupied: 0
 --- !u!1001 &59192709859118264
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6885,6 +6934,26 @@ PrefabInstance:
       propertyPath: Parent
       value: 
       objectReference: {fileID: 1454622889}
+    - target: {fileID: 1038116065610320319, guid: dfe5bcc3106ff134a821629537ef4e9e, type: 3}
+      propertyPath: boxSize
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1038116065610320319, guid: dfe5bcc3106ff134a821629537ef4e9e, type: 3}
+      propertyPath: boxColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1038116065610320319, guid: dfe5bcc3106ff134a821629537ef4e9e, type: 3}
+      propertyPath: boxColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1038116065610320319, guid: dfe5bcc3106ff134a821629537ef4e9e, type: 3}
+      propertyPath: boxColor.g
+      value: 0.84883296
+      objectReference: {fileID: 0}
+    - target: {fileID: 1038116065610320319, guid: dfe5bcc3106ff134a821629537ef4e9e, type: 3}
+      propertyPath: boxColor.r
+      value: 0.7176471
+      objectReference: {fileID: 0}
     - target: {fileID: 1038116065610320319, guid: dfe5bcc3106ff134a821629537ef4e9e, type: 3}
       propertyPath: boxCorrectPos
       value: 
@@ -6999,6 +7068,26 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1498084999}
     - target: {fileID: 4405336837443874603, guid: a6c0cd87c742af94c82bf6494ecd856e, type: 3}
+      propertyPath: boxSize
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4405336837443874603, guid: a6c0cd87c742af94c82bf6494ecd856e, type: 3}
+      propertyPath: boxColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4405336837443874603, guid: a6c0cd87c742af94c82bf6494ecd856e, type: 3}
+      propertyPath: boxColor.b
+      value: 0.7176471
+      objectReference: {fileID: 0}
+    - target: {fileID: 4405336837443874603, guid: a6c0cd87c742af94c82bf6494ecd856e, type: 3}
+      propertyPath: boxColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4405336837443874603, guid: a6c0cd87c742af94c82bf6494ecd856e, type: 3}
+      propertyPath: boxColor.r
+      value: 0.82912964
+      objectReference: {fileID: 0}
+    - target: {fileID: 4405336837443874603, guid: a6c0cd87c742af94c82bf6494ecd856e, type: 3}
       propertyPath: boxCorrectPos
       value: 
       objectReference: {fileID: 706083828}
@@ -7080,6 +7169,26 @@ PrefabInstance:
       propertyPath: Parent
       value: 
       objectReference: {fileID: 1883553506}
+    - target: {fileID: 3477356420297309606, guid: f036c532ec35b2a44bf63fab76c9ea9b, type: 3}
+      propertyPath: boxSize
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477356420297309606, guid: f036c532ec35b2a44bf63fab76c9ea9b, type: 3}
+      propertyPath: boxColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477356420297309606, guid: f036c532ec35b2a44bf63fab76c9ea9b, type: 3}
+      propertyPath: boxColor.b
+      value: 0.8714379
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477356420297309606, guid: f036c532ec35b2a44bf63fab76c9ea9b, type: 3}
+      propertyPath: boxColor.g
+      value: 0.7176471
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477356420297309606, guid: f036c532ec35b2a44bf63fab76c9ea9b, type: 3}
+      propertyPath: boxColor.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3477356420297309606, guid: f036c532ec35b2a44bf63fab76c9ea9b, type: 3}
       propertyPath: boxCorrectPos
       value: 
