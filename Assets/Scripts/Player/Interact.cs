@@ -79,7 +79,14 @@ public class Interact : MonoBehaviour
                 item.transform.rotation = Quaternion.Euler(Vector3.zero);
                 _currentBox = pickUp;
 
-                Physics.IgnoreCollision(_currentBox.GetComponent<Collider>(), player.GetComponent<Collider>(), true);
+                Collider boxCollider = _currentBox.GetComponent<Collider>();
+                Collider playerCollider = player.GetComponent<Collider>();
+
+                if (boxCollider && playerCollider)
+                {
+                    Physics.IgnoreCollision(boxCollider, playerCollider, true);
+                    boxCollider.enabled = false; // Turn off collision completely
+                }
                 break;
         }
     }
@@ -95,15 +102,25 @@ public class Interact : MonoBehaviour
 
     public void ThrowObject()
     {
+        if (_currentBox == null) return;
+
         _currentBox.transform.position = _currentBox.correctBoxPos.transform.position;
         _currentBox.transform.rotation = _currentBox.correctBoxPos.transform.rotation;
         _currentBox.gameObject.layer = 7;
 
-        Physics.IgnoreCollision(_currentBox.GetComponent<Collider>(), player.GetComponent<Collider>(), false);
-        _currentBox.transform.parent = _currentBox.Parent;
+        Collider boxCollider = _currentBox.GetComponent<Collider>();
+        Collider playerCollider = player.GetComponent<Collider>();
 
+        if (boxCollider && playerCollider)
+        {
+            Physics.IgnoreCollision(boxCollider, playerCollider, false);
+            boxCollider.enabled = true; // Reactivate collision
+        }
+
+        _currentBox.transform.parent = _currentBox.Parent;
         _currentBox = null;
     }
+
 
     private void OnDrawGizmosSelected()
     {

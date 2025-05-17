@@ -56,7 +56,7 @@ Transform:
   m_GameObject: {fileID: 1672900833762686074}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.2, z: 1.44}
+  m_LocalPosition: {x: 0, y: -1.02, z: 1.89}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -227,9 +227,6 @@ MonoBehaviour:
   playerCanMove: 1
   walkSpeed: 5
   maxVelocityChange: 10
-  enableJump: 0
-  jumpKey: 32
-  jumpPower: 5
 --- !u!114 &5322420732009851644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -854,6 +851,7 @@ MonoBehaviour:
   _black: 10
   _goldenn: 20
   _collider: {fileID: 3517141474607800566}
+  firstWeapon: {fileID: 0}
 --- !u!4 &1773864313519087857 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a51e26b001bc82d4fa2591e96923522a, type: 3}
