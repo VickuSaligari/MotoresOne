@@ -81,9 +81,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ff2245d9cd4a9c44296d6931ffba2eb3, type: 3}
       insertIndex: -1
       addedObject: {fileID: -5386901629549062403}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ff2245d9cd4a9c44296d6931ffba2eb3, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 3456264064731591195}
   m_SourcePrefab: {fileID: 100100000, guid: ff2245d9cd4a9c44296d6931ffba2eb3, type: 3}
 --- !u!1 &312994790413807122 stripped
 GameObject:
@@ -102,10 +99,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5c162189344e8843a6754cb1f92a660, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _force: 200
+  lifetime: 8
   _normal: 20
   _black: 10
   _goldenn: 20
-  _force: 26
+  secondWeapon: {fileID: 0}
 --- !u!54 &2814790275599222863
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -116,7 +115,7 @@ Rigidbody:
   serializedVersion: 4
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -154,17 +153,3 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 1
   m_Center: {x: -0.00000029802322, y: 0, z: 0.000000029802322}
---- !u!114 &3456264064731591195
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 312994790413807122}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dba7142556cc9ab41913862bd813b186, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 4814116515033958363}
-  poolSize: 10

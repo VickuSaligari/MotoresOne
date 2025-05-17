@@ -41,18 +41,7 @@ public class FirstPersonController : MonoBehaviour
     public bool playerCanMove = true;
     public float walkSpeed = 5f;
     public float maxVelocityChange = 10f;
-
-    #region Jump
-
-    public bool enableJump = true;
-    public KeyCode jumpKey = KeyCode.Space;
-    public float jumpPower = 5f;
-
-    // Internal Variables
-    private bool isGrounded = false;
-
-    #endregion
-
+    
     #endregion
     
     private Vector3 originalScale;
@@ -106,8 +95,6 @@ public class FirstPersonController : MonoBehaviour
             transform.localEulerAngles = new Vector3(0, yaw, 0);
             playerCamera.transform.localEulerAngles = new Vector3(pitch, 0, 0);
         }
-
-        CheckGround();
     }
 
     void FixedUpdate()
@@ -127,23 +114,7 @@ public class FirstPersonController : MonoBehaviour
                 rb.AddForce(velocityChange, ForceMode.VelocityChange);
         }
     }
-    private void CheckGround()
-    {
-        Vector3 origin = new Vector3(transform.position.x, transform.position.y - (transform.localScale.y * .5f), transform.position.z);
-        Vector3 direction = transform.TransformDirection(Vector3.down);
-        float distance = .75f;
-
-        if (Physics.Raycast(origin, direction, out RaycastHit hit, distance))
-        {
-            Debug.DrawRay(origin, direction * distance, Color.red);
-            isGrounded = true;
-        }
-        else
-        {
-            isGrounded = false;
-        }
-    }
-}
+  }
 
 #if UNITY_EDITOR
     [CustomEditor(typeof(FirstPersonController)), InitializeOnLoadAttribute]

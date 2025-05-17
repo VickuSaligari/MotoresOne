@@ -569,7 +569,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2792707570496427269}
-  - component: {fileID: 2730375051297855336}
   m_Layer: 0
   m_Name: Spawn
   m_TagString: Untagged
@@ -592,20 +591,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8339951288816356605}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2730375051297855336
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4791584924417922360}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dba7142556cc9ab41913862bd813b186, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 0}
-  poolSize: 10
 --- !u!1 &8167347190729880290
 GameObject:
   m_ObjectHideFlags: 0
@@ -979,5 +964,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3fab0086a34bec48afabc4b9ce4477b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 312994790413807122, guid: bbd76e41e5bda1a4c9d1781e3d0b63c9, type: 3}
   bulletSpawn: {fileID: 2792707570496427269}
+  bulletPool: {fileID: 0}

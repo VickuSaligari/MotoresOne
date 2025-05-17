@@ -9,6 +9,7 @@ public class Melee : Weapons, IAddPoints
     [SerializeField] private string attackTrigger;
     [SerializeField] private int _normal = 20, _black = 10, _goldenn = 20;
     [SerializeField] Collider _collider;
+    public Weapons firstWeapon;
 
     private void Start()
     {
@@ -42,6 +43,6 @@ public class Melee : Weapons, IAddPoints
     }
     public override void Attack()
     {
-      animator.SetTrigger(attackTrigger);
+      if (animator) animator.SetTrigger(attackTrigger);
     }
 }
